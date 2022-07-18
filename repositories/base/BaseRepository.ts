@@ -15,9 +15,16 @@ export abstract class BaseRepository<T, TKey> implements IWrite<T, TKey>, IRead<
         const res = await this._collection.findOne<T>({ _id: id })
         return res
     }
-    async create(item: T): Promise<TKey> {
-        const result: InsertOneResult<T> = await this._collection.insertOne(item);
-        return result.insertedId as unknown as TKey;
+    async create(item: T): Promise<TKey | null> {
+        try{
+            const result: InsertOneResult<T> = await this._collection.insertOne(item);
+            return result.insertedId as unknown as TKey;                
+        }
+        catch(e)
+        {
+            console.log(e)
+            return null;
+        }
     }
     update(id: TKey, item: T): Promise<boolean> {
         throw new Error("Method not implemented.");
