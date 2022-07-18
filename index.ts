@@ -2,8 +2,9 @@
 import { MongoClient } from 'mongodb';
 
 import { Company } from './entities/company';
+import { Good } from './entities/Good';
 import { CompanyRepository } from './repositories/CompanyRepository';
-
+import { GoodsRepository } from "./repositories/GoodsRepository"
 // creating a function that execute self runs
 (async () => {
     // connecting at mongoClient
@@ -17,8 +18,19 @@ import { CompanyRepository } from './repositories/CompanyRepository';
     const repository = new CompanyRepository(db, 'Company');
 
     const result = await repository.create(company);
-    console.log(`company inserted with ${result ? 'success' : 'fail'}`)
+    console.log(`company inserted with ${result}`)
 
     const count = await repository.countOfCompany();
     console.log(`the count of comapny is ${count}`)
+
+    const repository2 = new GoodsRepository(db, 'Goods');
+
+    const good = new Good(100, 'Borna', 2020);
+    const result2 = await repository2.create(good);
+    console.log(`company inserted with ${result2}`)
+
+    const count2 = await repository2.counts();
+    console.log(`the count of comapny is ${count2}`)
+
+
 })();
