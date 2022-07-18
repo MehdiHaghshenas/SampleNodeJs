@@ -1,6 +1,6 @@
 import { IRead } from "../interfaces/IRead";
 import { IWrite } from "../interfaces/IWrite";
-import { Db, Collection, InsertOneResult, OptionalUnlessRequiredId } from 'mongodb'
+import { Db, Collection, InsertOneResult, MongoServerError } from 'mongodb'
 
 export abstract class BaseRepository<T, TKey> implements IWrite<T, TKey>, IRead<T, TKey>{
     public readonly _collection: Collection;
@@ -16,13 +16,17 @@ export abstract class BaseRepository<T, TKey> implements IWrite<T, TKey>, IRead<
         return res
     }
     async create(item: T): Promise<TKey | null> {
-        try{
+        try {
             const result: InsertOneResult<T> = await this._collection.insertOne(item);
-            return result.insertedId as unknown as TKey;                
+            return result.insertedId as unknown as TKey;
         }
-        catch(e)
-        {
-            console.log(e)
+        catch (e) {
+            if (e instanceof MongoServerError) {
+                if (e.code === 11000) {
+                    //TODO Add Dupplicate key Exception
+                    console.log(e)
+                }
+            }
             return null;
         }
     }
