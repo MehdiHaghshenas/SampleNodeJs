@@ -2,10 +2,10 @@
   "name": "samplenodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "source/server.ts",
   "scripts": {
     "dev": "nodemon server.ts",
-    "build": "rm -rf lib/ && prettier --write ./ && tsc",
+    "build": "rm -rf build/ && prettier --write --no-semi source/ && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
