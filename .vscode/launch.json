@@ -5,17 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program file",
-      "skipFiles": ["<node_internals>/**"],
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      // "program": "${workspaceFolder}/source/index.ts",
-      "program": "${file}",
-      // "preLaunchTask": "npm: dev",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "name": "nodemon",
@@ -27,6 +16,17 @@
         "<node_internals>/**"
       ],
       "type": "node"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program file",
+      "skipFiles": ["<node_internals>/**"],
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      // "program": "${workspaceFolder}/source/index.ts",
+      "program": "${file}",
+      // "preLaunchTask": "npm: dev",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
   ]
 }
