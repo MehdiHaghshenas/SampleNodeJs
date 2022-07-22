@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "source/server.ts",
+  "prettier":{
+    "semi": false
+  },
   "scripts": {
     "dev": "nodemon source/server.ts",
     "build": "rm -rf build/ && prettier --write --no-semi source/ && tsc",
