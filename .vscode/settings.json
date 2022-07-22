@@ -2,5 +2,28 @@
   "prettier.semi": false,
   "markdown.styles": [
     "https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-  ]
+  ],
+  "rest-client.environmentVariables": {
+    "$shared": {
+      // "prodToken": "foo",
+      // "nonProdToken": "bar"
+    },
+    "local": {
+      "version": "v2",
+      "baseurl": "http://localhost:6060",
+      // "token": "{{$shared nonProdToken}}",
+      "secretKey": "devSecret"
+    },
+    "production": {
+      "baseurl": "https://api.a.com/",
+      // "token": "{{$shared prodToken}}",
+      "secretKey": "prodSecret"
+    }
+  },
+  "rest-client.defaultHeaders": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "timezone": "Asia/Tehran"
+}
 }
