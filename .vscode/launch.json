@@ -7,11 +7,26 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch Program file",
       "skipFiles": ["<node_internals>/**"],
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "program": "${workspaceFolder}/source/index.ts",
+      // "program": "${workspaceFolder}/source/index.ts",
+      "program": "${file}",
+      // "preLaunchTask": "npm: dev",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "nodemon",
+      "program": "${workspaceFolder}/source/server.ts",
+      "request": "launch",
+      "restart": true,
+      "runtimeExecutable": "nodemon",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
     }
   ]
 }
