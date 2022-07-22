@@ -1,11 +1,11 @@
 import express from "express"
 import controller from "../controllers/sample"
-const router = express.Router()
+const sampleRouter = express.Router()
 
-router.get("/posts", controller.getPosts)
-router.get("/posts/:id", controller.getPost)
-router.put("/posts/:id", controller.updatePost)
-router.delete("/posts/:id", controller.deletePost)
-router.post("/posts", controller.addPost)
+sampleRouter.get("/posts", controller.getPosts)
+sampleRouter.get("/posts/:id", controller.getPost)
+sampleRouter.put("/posts/:id", controller.updatePost)
+sampleRouter.delete("/posts/:id", controller.deletePost)
+sampleRouter.post("/posts", controller.addPost)
 
-export default router
+export default sampleRouter
