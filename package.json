@@ -7,8 +7,8 @@
     "semi": false
   },
   "scripts": {
-    "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write --no-semi source/ && tsc",
+    "dev": "node source/swagger.js && nodemon source/server.ts",
+    "build": "rm -rf build/ && prettier --write --no-semi source/ && node source/swagger.js && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
