@@ -8,6 +8,6 @@ export class Company {
   constructor(name: string, year: number) {
     this.name = name;
     this.year = year;
-    this._id = new ObjectID()
+    this._id = new ObjectID();
   }
 }
