@@ -2,6 +2,7 @@ import http from "http"
 import express, { Express } from "express"
 import morgan from "morgan"
 import sampleRouter from "./routes/sample.routing"
+import companyRouter from "./routes/company.routing"
 import swaggerUi from "swagger-ui-express"
 import fs from "fs"
 
@@ -48,6 +49,7 @@ router.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 /** Routes */
 router.use("/", sampleRouter)
+router.use("/", companyRouter)
 
 /** Error handling */
 router.use((req, res, next) => {
