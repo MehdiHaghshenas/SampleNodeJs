@@ -17,7 +17,7 @@ import { GoodsRepository } from "./repositories/GoodsRepository"
   const company = new Company("Borna", 2020)
 
   // initializing the repository
-  const repository = new CompanyRepository(db, "Company")
+  const repository = new CompanyRepository(db)
 
   const result = await repository.create(company)
   console.log(`company inserted with ${result}`)

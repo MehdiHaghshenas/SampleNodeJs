@@ -1,0 +1,27 @@
+GET {{baseurl}}/company HTTP/1.1
+
+###
+GET {{baseurl}}/posts/1 HTTP/1.1
+
+###
+# @prompt id
+PUT {{baseurl}}/posts/{{id}} HTTP/1.1
+
+{
+    "title": "Another post title",
+    "body": "Another post body"
+}
+###
+# @name delete_post
+# @prompt id
+DELETE {{baseurl}}/posts/{{id}} HTTP/1.1
+
+###
+# @name CreateNewPost
+POST {{baseurl}}/posts HTTP/1.1
+
+{
+    "title": "New post",
+    "body": "New post body"
+}
+###

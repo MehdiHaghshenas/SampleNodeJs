@@ -11,6 +11,13 @@
     "http"
   ],
   "paths": {
+    "/company": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/posts": {
       "get": {
         "description": "",
