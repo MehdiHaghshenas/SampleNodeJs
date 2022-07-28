@@ -4,7 +4,7 @@ const companyRouter = express.Router()
 
 companyRouter.get("/company", companycontroler.getAllCompany)
 
-// sampleRouter.get("/posts/:id", controller.getPost)
+companyRouter.get("/company/:id", companycontroler.getCompany)
 // sampleRouter.put("/posts/:id", controller.updatePost)
 // sampleRouter.delete("/posts/:id", controller.deletePost)
 // sampleRouter.post("/posts", controller.addPost)

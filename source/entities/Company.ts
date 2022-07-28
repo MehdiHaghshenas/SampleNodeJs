@@ -2,12 +2,12 @@ import { ObjectID } from "bson"
 
 export class Company {
   _id: ObjectID
-  private name: string
-  private year: number
+  Name: string
+  Year: number
 
   constructor(name: string, year: number) {
-    this.name = name
-    this.year = year
+    this.Name = name
+    this.Year = year
     this._id = new ObjectID()
   }
 }
