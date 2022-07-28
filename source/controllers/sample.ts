@@ -22,6 +22,7 @@ const getPosts = async (req: Request, res: Response, next: NextFunction) => {
 
 // getting a single post
 const getPost = async (req: Request, res: Response, next: NextFunction) => {
+
   // get the post id from the req
   let id: string = req.params.id
   // get the post
@@ -36,8 +37,39 @@ const getPost = async (req: Request, res: Response, next: NextFunction) => {
 
 // updating a post
 const updatePost = async (req: Request, res: Response, next: NextFunction) => {
+  // #swagger.consumes = ['application/json']  
+  // #swagger.tags = ['sample']
+  // #swagger.summary = 'update a post'
+  // #swagger.description = 'update a post <b>mehdi</b>'
+  /* #swagger.parameters['id'] = {
+    in: 'path',
+    description: 'post id for update',
+    required: true,
+    type: 'number'
+  }
+ */
+/*	#swagger.requestBody = {
+            required: true,
+            "@content": {
+                "application/json": {
+                    schema: {
+                        type: "object",
+                        properties: {
+                            title: {
+                                type: "string"
+                            },
+                            body: {
+                                type: "string"
+                            }
+                        },
+                        required: ["title"]
+                    }
+                }
+            } 
+        }
+    */ 
   // get the post id from the req.params
-  let id: string = req.params.id
+  let id: string = req.params.id  
   // get the data from req.body
   let title: string = req.body.title ?? null
   let body: string = req.body.body ?? null
@@ -71,6 +103,26 @@ const deletePost = async (req: Request, res: Response, next: NextFunction) => {
 
 // adding a post
 const addPost = async (req: Request, res: Response, next: NextFunction) => {
+/*	#swagger.requestBody = {
+            required: true,
+            "@content": {
+                "application/json": {
+                    schema: {
+                        type: "object",
+                        properties: {
+                            title: {
+                                type: "string"
+                            },
+                            body: {
+                                type: "string"
+                            }
+                        },
+                        required: ["title"]
+                    }
+                }
+            } 
+        }
+    */ 
   // get the data from req.body
   let title: string = req.body.title
   let body: string = req.body.body

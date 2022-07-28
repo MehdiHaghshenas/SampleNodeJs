@@ -1,4 +1,4 @@
-swaggerAutogen = require('swagger-autogen')()
+swaggerAutogen = require('swagger-autogen')({openapi: '3.0.0'})
 
 const outputFile = "./source/swagger_output.json"
 
@@ -19,7 +19,7 @@ function throughDirectory(Directory) {
 // const endpointsFiles = ["./source/routes/sample.routing.ts"]
 const endpointsFiles = []
 
-throughDirectory("./source/routes/");
+throughDirectory("./source/");
 
 console.log(endpointsFiles)
 
