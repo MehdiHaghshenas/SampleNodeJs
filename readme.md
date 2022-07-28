@@ -31,10 +31,10 @@ you can also switch environment using shortcut Ctrl+Alt+E(Cmd+Alt+E for macOS), 
 
 ## refrence 
 - for swagger with authentication compelete **ToDO**
-<br/>swagger autogen<br/>
+    - swagger autogen<br/>
 https://medium.com/@davibaltarx/documenta%C3%A7%C3%A3o-autom%C3%A1tica-de-apis-em-node-js-eb03041c643b
 https://www.npmjs.com/package/swagger-autogen
-<br/>swagger jsdoc<br/>
+    - swagger jsdoc<br/>
 https://javascript.plainenglish.io/how-to-implement-and-use-swagger-in-nodejs-d0b95e765245
 
 - mongo in node js<br/>
