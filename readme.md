@@ -39,3 +39,6 @@ https://javascript.plainenglish.io/how-to-implement-and-use-swagger-in-nodejs-d0
 
 - mongo in node js<br/>
 https://www.mongodb.com/docs/realm/sdk/node/examples/query-mongodb/
+
+- for validation<br/>
+https://dev.to/urosstok/input-validation-in-express-from-typescript-1p05
