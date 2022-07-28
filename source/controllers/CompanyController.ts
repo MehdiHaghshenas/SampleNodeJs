@@ -15,11 +15,13 @@ const getAllCompany = async (req: Request, res: Response<Company[]>, next: NextF
   let companies: Company[] = await companyRepository.find({})
   /*
   #swagger.responses[200] = {
-            description: "Some description... OpenAPI 3.x",
+            description: "return list of company",
             content: {
                 "application/json": {
-                    schema:{
-                        $ref: "#/definitions/User"
+                    '@schema': {
+                      name: 'Jhon Doe',
+                        age: 29,
+                        about: ''           
                     }
                 }           
             }
@@ -27,14 +29,38 @@ const getAllCompany = async (req: Request, res: Response<Company[]>, next: NextF
    */
   return res.status(200).json(companies)
 }
-const getCompany = async (req: Request, res: Response<Company| null>, next: NextFunction) => {
+const getCompany = async (req: Request, res: Response<Company | null>, next: NextFunction) => {
+  /* #swagger.responses[200] = {
+     description: "Some description... OpenAPI 3.x",
+     "content": {
+         "application/json": {
+            'schema': {
+              type: 'object',
+                  properties: {
+                    _id: {
+                      type: 'string',
+                      example: '234234234234'
+                    },
+                    name: {
+                      type: 'string',
+                      example: 'Mehdi'
+                    },
+                    year: {
+                      type: 'integer',
+                      example: 2020
+                    }
+                  }
+                }
+         }
+       }       
+     }
+   */
   if (ObjectID.isValid(req.params.id)) {
-    const objid = new ObjectID(req.params.id)
-    let company =await companyRepository.findOne(objid)
+    const obj = new ObjectID(req.params.id)
+    let company = await companyRepository.findOne(obj)
     return res.status(200).json(company)
   }
-  else
-  {
+  else {
     return res.status(400).json()
   }
 }

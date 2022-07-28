@@ -26,11 +26,13 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Some description... OpenAPI 3.x",
+            "description": "return list of company",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
+                "@schema": {
+                  "name": "Jhon Doe",
+                  "age": 29,
+                  "about": ""
                 }
               }
             }
@@ -53,7 +55,28 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Some description... OpenAPI 3.x",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "234234234234"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Mehdi"
+                    },
+                    "year": {
+                      "type": "integer",
+                      "example": 2020
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
