@@ -47,3 +47,8 @@ https://dev.to/urosstok/input-validation-in-express-from-typescript-1p05
 https://github.com/YousefED/typescript-json-schema
     - with class-validator and class-transformer
 https://medium.com/@saman.ghm/validation-and-conversion-request-body-in-one-line-for-node-js-with-typescript-6adfac0ccd0a
+
+https://github.com/typestack/class-transformer
+
+- decorators
+https://www.typescriptlang.org/docs/handbook/decorators.html
