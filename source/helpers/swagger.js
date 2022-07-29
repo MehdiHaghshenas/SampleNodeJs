@@ -3,23 +3,10 @@ swaggerAutogen = require('swagger-autogen')({openapi: '3.0.0'})
 const outputFile = "./source/swagger_output.json"
 
 //TODO get all ts files in routes
-const path = require("path");
-const fs = require("fs");
-
-function throughDirectory(Directory) {
-    fs.readdirSync(Directory).forEach(file => {
-        const filename = path.join(Directory, file);
-        const stat = fs.statSync(filename)
-        if (stat.isDirectory()) return throughDirectory(filename);
-        else if (path.extname(file).toLowerCase() == '.ts' && stat.size >= 100)
-            return endpointsFiles.push(filename);
-    });
-}
+const { throughDirectory } = require("./throughDirectory");
 
 // const endpointsFiles = ["./source/routes/sample.routing.ts"]
-const endpointsFiles = []
-
-throughDirectory("./source/");
+const endpointsFiles = throughDirectory("./source/");
 
 console.log(endpointsFiles)
 

@@ -10,6 +10,7 @@ const settings = {
 const compilerOptions = {
   strictNullChecks: true,
 };
+const endpointsFiles = [];
 
 const program = tjs.getProgramFromFiles([path.resolve("schema_definition.ts")], compilerOptions, "./");
 
