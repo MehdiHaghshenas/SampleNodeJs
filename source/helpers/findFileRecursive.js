@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const { endpointsFiles } = require("./swagger");
 
-function throughDirectory(directory){
+function findFileRecursive(directory){
     const endpointsFiles = []
     throughDirectoryInternal(directory, endpointsFiles)
     return endpointsFiles
@@ -18,4 +18,4 @@ function throughDirectoryInternal(Directory, endpointsFiles) {
             return endpointsFiles.push(filename);
     });
 }
-exports.throughDirectory = throughDirectory;
+exports.findFileRecursive = findFileRecursive;
