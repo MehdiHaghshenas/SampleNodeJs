@@ -10,7 +10,8 @@
     "dev": "node source/helpers/swagger.js && nodemon source/server.ts",
     "build": "rm -rf build/ && prettier --write --no-semi source/ && node source/helpers/swagger.js && tsc && cp source/swagger_output.json build/swagger_output.json",
     "buildw": "buildw.bat",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "schema": "node source/helpers/schemaGenerator.js"
   },
   "author": "",
   "license": "ISC",
