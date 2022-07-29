@@ -41,4 +41,7 @@ https://javascript.plainenglish.io/how-to-implement-and-use-swagger-in-nodejs-d0
 https://www.mongodb.com/docs/realm/sdk/node/examples/query-mongodb/
 
 - for validation<br/>
+    - with json schema
 https://dev.to/urosstok/input-validation-in-express-from-typescript-1p05
+    - with class-validator and class-transformer
+https://medium.com/@saman.ghm/validation-and-conversion-request-body-in-one-line-for-node-js-with-typescript-6adfac0ccd0a

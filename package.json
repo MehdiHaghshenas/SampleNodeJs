@@ -7,8 +7,8 @@
     "semi": false
   },
   "scripts": {
-    "dev": "node source/swagger.js && nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write --no-semi source/ && node source/swagger.js && tsc && cp source/swagger_output.json build/swagger_output.json",
+    "dev": "node source/helpers/swagger.js && nodemon source/server.ts",
+    "build": "rm -rf build/ && prettier --write --no-semi source/ && node source/helpers/swagger.js && tsc && cp source/swagger_output.json build/swagger_output.json",
     "buildw": "buildw.bat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
